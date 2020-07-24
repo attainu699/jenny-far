@@ -1,0 +1,19 @@
+def bin_search_sorted_arr(key,arr,l=0,h=-1):
+    if(h==-1):
+        h=len(arr)-1
+    while(l<=h):
+        m=(l+h)//2
+        if(arr[m]==key):
+            return m+1
+        if(arr[m]<key):
+            l=m+1
+        else:
+            h=m-1
+    return -1
+
+t=int(input())
+for _ in range(t):
+    n,k=map(int,input().split())
+    arr=list(map(int,input().split()))
+    print(1 if bin_search_sorted_arr(key=k,arr=arr)!= -1 else -1)
+        
